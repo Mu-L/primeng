@@ -1,9 +1,9 @@
-import { AppNewsComponent } from '@/components/layout/news/app.news.component';
 import { AppTopBarComponent } from '@/components/layout/topbar/app.topbar.component';
 import { AppConfigService } from '@/service/appconfigservice';
 import { CommonModule } from '@angular/common';
 import { Component, computed, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { ButtonModule } from 'primeng/button';
 import { Subscription } from 'rxjs';
 import { BlockSectionComponent } from './blocksection.component';
 import { FeaturesSectionComponent } from './featuressection.component';
@@ -12,13 +12,12 @@ import { HeroSectionComponent } from './herosection.component';
 import { TemplateSectionComponent } from './templatesection.component';
 import { ThemeSectionComponent } from './themesection.component';
 import { UsersSectionComponent } from './userssection.component';
-import { ButtonModule } from 'primeng/button';
 
 @Component({
     selector: 'landing',
     standalone: true,
     templateUrl: './landing.component.html',
-    imports: [CommonModule, AppNewsComponent, AppTopBarComponent, ButtonModule, HeroSectionComponent, FeaturesSectionComponent, UsersSectionComponent, ThemeSectionComponent, BlockSectionComponent, TemplateSectionComponent, FooterSectionComponent]
+    imports: [CommonModule, AppTopBarComponent, ButtonModule, HeroSectionComponent, FeaturesSectionComponent, UsersSectionComponent, ThemeSectionComponent, BlockSectionComponent, TemplateSectionComponent, FooterSectionComponent]
 })
 export class LandingComponent implements OnInit {
     subscription!: Subscription;

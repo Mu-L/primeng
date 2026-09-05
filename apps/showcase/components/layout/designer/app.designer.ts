@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { Drawer, DrawerModule } from 'primeng/drawer';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { DesignerService } from '@/service/designerservice';
@@ -50,7 +50,7 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
         <p-confirm-dialog key="designer" />`,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppDesigner implements OnInit {
+export class AppDesigner {
     @ViewChild('drawer') drawer: Drawer;
 
     public platformId: any = inject(PLATFORM_ID);
@@ -95,9 +95,9 @@ export class AppDesigner implements OnInit {
         this.configService.appState.update((state) => ({ ...state, darkTheme: !state.darkTheme }));
     }
 
-    async ngOnInit() {
+    /*async ngOnInit() {
         if (isPlatformBrowser(this.platformId)) {
             await this.designerService.restore();
         }
-    }
+    }*/
 }

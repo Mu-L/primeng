@@ -1,6 +1,6 @@
 {
     "name": "@primeng/monorepo",
-    "version": "21.1.9",
+    "version": "21.1.10",
     "author": "PrimeTek Informatics",
     "homepage": "https://primeng.org/",
     "repository": {
@@ -16,9 +16,7 @@
         "clean": "npx rimraf --glob **/node_modules **/dist **/.angular ./pnpm-lock.yaml",
         "init": "pnpm install && husky",
         "link": "pnpm --filter './packages/*' dev:link",
-        "release": "pnpm run build && pnpm recursive publish --filter './packages/*' --no-git-checks --report-summary",
-        "release:beta": "pnpm run build && pnpm recursive publish --filter './packages/*' --no-git-checks --report-summary --tag beta",
-        "release:rc": "pnpm run build && pnpm recursive publish --filter './packages/*' --no-git-checks --report-summary --tag rc",
+        "release": "pnpm run build && pnpm recursive publish --filter './packages/*' --no-git-checks --report-summary --tag v21-stable",
         "build": "cross-env NODE_ENV=production pnpm run build:check && pnpm run build:packages",
         "build:check": "pnpm run format:check && pnpm run security:check",
         "build:packages": "pnpm run build:lib && pnpm run build:themes && pnpm run build:mcp && pnpm run build:docs && pnpm run build:showcase",
